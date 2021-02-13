@@ -1,0 +1,12 @@
+////////////////////////
+int** v = malloc(sizeof(int*) * 5); // int** define um ponteiro de ponteiro; malloc define uma alocação de espaço em bytes;
+//O sizeof define o tamanho da alocação de acordo com a variável expressa.
+for (int i = 0; i < 5; i++) {
+	v[i] = malloc(sizeof(int) * 10);
+}
+
+for (int i =0; i < 5; i++) {
+	free(v[i]); //Libera o espaço alocado pelo malloc linha por linha.
+}
+free(v); //Libera todo espaço alocado
+/////////////////////////
